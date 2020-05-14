@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+
+    <title> test </title>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<!--
+    <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+-->
+<script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+
+        <div class="mt-1 mb-4">
+            <div>player</div>
+            <video id="player" controls autoplay playsinline></video>
+        </div>
+        <div class="mt-1 mb-4">
+            <button class="btn btn-primary" id="capture">
+                <i class="fas fa-camera"></i>
+            </button>
+        </div>
+        <div class="mt-1 mb-4 border border-dark">
+            <div>canvas</div>
+            <canvas id="canvas" width="300" height="100"></canvas>
+        </div>
+        <div class="mt-1 mb-4 border border-dark">
+            <div>snapshot</div>
+            <canvas id="snapshot" width="300" height="100"></canvas>
+        </div>
+        <div id="results" align="center">results</div>
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
