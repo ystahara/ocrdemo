@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    v3
+    v2
     <div align="center">
         <video id="player" controls autoplay playsinline></video>
         <canvas id="canvas" width="300" height="100"></canvas>
@@ -65,8 +65,10 @@
                 const { data: { text } } = await Tesseract
                     .recognize(url, {
                         lang: 'eng'
+                    })
+                    .then(function(result) {
+                        alert(result);
                     });
-                alert(text);
             });
 
             // カメラに接続する
