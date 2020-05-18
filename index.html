@@ -60,7 +60,7 @@
                 context.drawImage(video, 100, 300, 600, 200, 0, 0, snapshotCanvas.width,
                     snapshotCanvas.height);
                 const url = snapshot.toDataURL("image/png");
-                const text = Tesseract
+                const result = Tesseract
                     .recognize(url, {
                         lang: 'eng'
                     });
