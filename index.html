@@ -63,16 +63,19 @@
                 const result = Tesseract
                     .recognize(url, {
                         lang: 'eng'
+                    })
+                    .then(function() {
+                        alert('complete!');
+                        var elem = document.createElement('div');
+                        elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#EEEEEE'><img src=" + url + " /></div><br>"
+                        var parent = document.getElementById("results");
+                        parent.insertBefore(elem, parent.firstChild);
+                        var numdiv = document.getElementById(num);
+                        var msg = document.createElement('div');
+                        msg.innerHTML = result.text;
+                        numdiv.appendChild(msg);
+                        num += 1;
                     });
-                var elem = document.createElement('div');
-                    elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#EEEEEE'><img src=" + url + " /></div><br>"
-                    var parent = document.getElementById("results");
-                    parent.insertBefore(elem, parent.firstChild);
-                    var numdiv = document.getElementById(num);
-                    var msg = document.createElement('div');
-                    msg.innerHTML = result.text;
-                    numdiv.appendChild(msg);
-                    num += 1;
             });
 
             // カメラに接続する
