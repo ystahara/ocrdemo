@@ -64,8 +64,8 @@
                     .recognize(url, {
                         lang: 'eng'
                     })
-                    .then(function() {
-                        alert('complete!');
+                    .then(function(result) {
+                        alert(result);
                         var elem = document.createElement('div');
                         elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#EEEEEE'><img src=" + url + " /></div><br>"
                         var parent = document.getElementById("results");
