@@ -61,22 +61,8 @@
                 context.drawImage(video, 100, 300, 600, 200, 0, 0, snapshotCanvas.width,
                     snapshotCanvas.height);
                 const url = snapshot.toDataURL("image/png");
-                Tesseract
-                    .recognize(url, {
-                        lang: 'eng'
-                    })
-                    .then(function(result) {
-                        alert(result);
-                        // var elem = document.createElement('div');
-                        // elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#EEEEEE'><img src=" + url + " /></div><br>"
-                        // var parent = document.getElementById("results");
-                        // parent.insertBefore(elem, parent.firstChild);
-                        // var numdiv = document.getElementById(num);
-                        // var msg = document.createElement('div');
-                        // msg.innerHTML = result.text;
-                        // numdiv.appendChild(msg);
-                        // num += 1;
-                    });
+                const data = await Tesseract.recognize(url, 'eng');
+                alert(result);
             });
 
             // カメラに接続する
