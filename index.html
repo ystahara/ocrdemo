@@ -62,7 +62,7 @@
                     snapshotCanvas.height);
                 const url = snapshot.toDataURL("image/png");
                 alert(url);
-                const { data: { text } } = await Tesseract
+                Tesseract
                     .recognize(url, {
                         lang: 'eng'
                     })
