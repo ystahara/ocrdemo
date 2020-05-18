@@ -24,6 +24,6 @@ h1 {
 
 #player {
   /* width: 500px; */
-  height: 400px;
-  /* display: none; */
+  /* height: 400px; */
+  display: none;
 }
