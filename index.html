@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    v2
+    v3
     <div align="center">
         <video id="player" controls autoplay playsinline></video>
         <canvas id="canvas" width="300" height="100"></canvas>
@@ -62,23 +62,11 @@
                     snapshotCanvas.height);
                 const url = snapshot.toDataURL("image/png");
                 alert(url);
-                // Tesseract
-                //     .recognize(url, {
-                //         lang: 'eng'
-                //     })
-                //     .then(function(result) {
-                //         console.log(result)
-                //         $("#msg").text("Progress Complete")
-                //         var elem = document.createElement('div');
-                //         elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#EEEEEE'><img src=" + url + " /></div><br>"
-                //         var parent = document.getElementById("results");
-                //         parent.insertBefore(elem, parent.firstChild);
-                //         var numdiv = document.getElementById(num);
-                //         var msg = document.createElement('div');
-                //         msg.innerHTML = result.text;
-                //         numdiv.appendChild(msg);
-                //         num += 1;
-                //     });
+                const { data: { text } } = await Tesseract
+                    .recognize(url, {
+                        lang: 'eng'
+                    });
+                alert(text);
             });
 
             // カメラに接続する
